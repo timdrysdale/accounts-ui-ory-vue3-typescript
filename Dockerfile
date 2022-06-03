@@ -1,14 +1,8 @@
-FROM node:lts-alpine
+FROM troglobit/merecat:latest
 
-# install simple http server for serving static content
-RUN npm install -g http-server-spa
+# copy compiled statif files
+COPY ./dist/. /var/www/
 
-# make the 'app' folder the current working directory
-WORKDIR /app
+EXPOSE 80
 
-
-# copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY ./dist/. /app/dist/
-
-EXPOSE 8080
-CMD [ "http-server-spa", "dist", "index.html", "8080" ]
+CMD [ "merecat", "-n", "/var/www" ]
