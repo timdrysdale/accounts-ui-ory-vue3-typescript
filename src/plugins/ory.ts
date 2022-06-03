@@ -6,7 +6,7 @@ import type { AxiosResponse } from 'axios';
 
 export const Ory = new V0alpha2Api(
   new Configuration({
-    basePath: import.meta.env.VITE_APP_ORY_BASE_PATH,
+    basePath: 'https://core.prac.io/auth', 
     baseOptions: {
       withCredentials: true,
     },
