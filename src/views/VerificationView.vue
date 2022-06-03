@@ -27,7 +27,7 @@ const handleGetFlowError = makeHandleGetFlowError(router);
 
 // check if we have a flow param
 const { protocol, host } = window.document.location;
-const { flow, returnTo = `${protocol}//${host}/app` } = route.query;
+const { flow, returnTo = `${protocol}//${host}${import.meta.env.BASE_URL}app` } = route.query;
 
 const initializeSelfServiceVerificationFlowForBrowsers = () =>
   ory
