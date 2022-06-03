@@ -5,10 +5,10 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/accounts-vue/',
+  base: '/accounts/',
   VITE_APP_ORY_BASE_PATH: 'https://core.prac.io/auth',
   VITE_APP_API_PROTOCOL: 'https',
-  VITE_APP_API_DOMAIN: 'core.prac.io/accounts-vue',
+  VITE_APP_API_DOMAIN: 'core.prac.io/accounts',
   VITE_APP_API_PROTOCOL: 'https',
   plugins: [vue()],
   resolve: {

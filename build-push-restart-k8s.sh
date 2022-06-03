@@ -1,5 +1,5 @@
 #!/bin/bash
-vite build --base=/accounts-vue/
+npm run build
 docker build --tag accounts-vue .
 docker tag accounts-vue:latest practable/accounts:vue-0.0.0
 docker push practable/accounts:vue-0.0.0
