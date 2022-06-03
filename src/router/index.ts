@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { Ory } from '../plugins/ory';
 
 const router = createRouter({
+  base: import.meta.env.BASE_URL,
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
