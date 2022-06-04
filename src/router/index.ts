@@ -53,6 +53,11 @@ const router = createRouter({
       component: () => import("../views/VerificationView.vue"),
     },
     {
+      path: "/verificationcomplete",
+      name: "verificationcomplete",
+      component: () => import("../views/VerificationCompleteView.vue"),
+    },
+    {
       path: "/verificationrequired",
       name: "verificationrequired",
       component: () => import("../views/VerificationRequiredView.vue"),
