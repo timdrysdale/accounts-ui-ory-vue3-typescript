@@ -1,56 +1,61 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { Ory } from '../plugins/ory';
+import { createRouter, createWebHistory } from "vue-router";
+import { Ory } from "../plugins/ory";
 
 const router = createRouter({
   base: import.meta.env.BASE_URL,
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'index',
-      redirect: '/app',
+      path: "/",
+      name: "index",
+      redirect: "/app",
       beforeEnter(to, from, next) {
-        console.log('/');
+        console.log("/");
         next();
       },
     },
     {
       // eventually change this to have children routes
-      path: '/app',
-      name: 'app',
-      component: () => import('../views/app/HomeView.vue'),
+      path: "/app",
+      name: "app",
+      component: () => import("../views/app/HomeView.vue"),
       beforeEnter(to, from, next) {
         Ory.toSession()
           .then(() => {
             next();
           })
-          .catch(() => next('/login'));
+          .catch(() => next("/login"));
       },
     },
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue'),
+      path: "/login",
+      name: "login",
+      component: () => import("../views/LoginView.vue"),
     },
     {
-      path: '/registration',
-      name: 'registration',
-      component: () => import('../views/RegistrationView.vue'),
+      path: "/registration",
+      name: "registration",
+      component: () => import("../views/RegistrationView.vue"),
     },
     {
-      path: '/recovery',
-      name: 'recovery',
-      component: () => import('../views/RecoveryView.vue'),
+      path: "/recovery",
+      name: "recovery",
+      component: () => import("../views/RecoveryView.vue"),
     },
     {
-      path: '/settings',
-      name: 'settings',
-      component: () => import('../views/SettingsView.vue'),
+      path: "/settings",
+      name: "settings",
+      component: () => import("../views/SettingsView.vue"),
     },
     {
-      path: '/verification',
-      name: 'verification',
-      component: () => import('../views/VerificationView.vue'),
+      path: "/verification",
+      name: "verification",
+      component: () => import("../views/VerificationView.vue"),
+    },
+    {
+      path: "/verificationrequired",
+      name: "verificationrequired",
+      component: () => import("../views/VerificationRequiredView.vue"),
     },
   ],
 });

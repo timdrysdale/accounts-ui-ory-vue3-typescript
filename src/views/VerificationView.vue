@@ -52,6 +52,7 @@ if (typeof flow !== 'string') {
   ory
     .getSelfServiceVerificationFlow(flow)
     .then((response) => {
+      console.log("VerificationView", response.data); 
       verificationFlow.value = response.data;
     })
     .catch(handleGetFlowError);
