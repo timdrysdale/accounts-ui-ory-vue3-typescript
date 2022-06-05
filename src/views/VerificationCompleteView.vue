@@ -1,7 +1,7 @@
 <template lang="pug">
 #login
   h1.poppins.fs_3.fw_6 Verification complete! 
-  h2.poppins.fs_2.fw_5 Thank you - you can now login.
+  h2.poppins.fs_3.fw_6 Login to continue
   OryFlow(
     v-if='loginFlow'
     form-id='login-form'
