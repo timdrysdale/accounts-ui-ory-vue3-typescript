@@ -5,7 +5,7 @@
     v-if='loginFlow'
     form-id='login-form'
     :flow='loginFlow'
-    title='Login'
+    title='Login - Accounts Service'
   )
   .links
     RouterLink(to='/registration') Sign Up
